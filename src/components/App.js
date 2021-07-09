@@ -39,6 +39,11 @@ function App() {
   }
 
   useEffect(() => {
+    const retreiveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if(retreiveContacts) setContacts(retreiveContacts);
+  },[]);
+
+  useEffect(() => {
 
     localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(contacts));
 
