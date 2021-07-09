@@ -1,9 +1,12 @@
 import React from 'react'
+import userLogo from '../images/user.png';
 
 const ContactCard = ({contact}) => {
     return (
         <div className="item">
+            <img className="ui avatar image" src={userLogo} alt="" />
             <div className="content">
+                
                 <div className="header">{contact.name}</div>
                 <div>{contact.email}</div>
                 
