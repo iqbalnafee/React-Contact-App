@@ -4,6 +4,7 @@ import React,{useState,useEffect} from 'react';
 import Header from './Header';
 import AddContact from './AddContact';
 import ContactList from './ContactList';
+import {uuid} from 'uuidv4';
 
 // const contacts = [
 
@@ -34,8 +35,16 @@ function App() {
   const [contacts,setContacts] = useState([]);
 
   const addContacts = (state) => {
-    setContacts([...contacts,{id:contacts.length,name:state.name,email:state.email}]);
+    //setContacts([...contacts,{id:contacts.length,name:state.name,email:state.email}]);
     //setContacts([...contacts,state]);
+    setContacts([...contacts,{id:uuid(),...state}]);
+  }
+
+  const deleteHandler = (id) => {
+    const newContacts = contacts.filter((contact) => {
+      return contact.id !== id;
+    });
+    setContacts(newContacts);
   }
 
   useEffect(() => {
@@ -54,7 +63,7 @@ function App() {
 
       <Header />
       <AddContact addContacts={addContacts}/>
-      <ContactList  contacts={contacts}/>
+      <ContactList  contacts={contacts} deleteHandler={deleteHandler}/>
       
     </div>
   );
