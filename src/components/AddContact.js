@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class AddContact extends Component {
     render() {
         return (
-            <div className="ui main" style={{margin:"50px"}}>
+            <div className="ui main" style={{marginTop:"5%"}}>
                 <h2>Add Contact</h2>
                 <form className="ui form">
 

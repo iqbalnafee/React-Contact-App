@@ -8,10 +8,11 @@ import ContactList from './ContactList';
 
 function App() {
   return (
-    <div className="App">
+    <div className="ui container">
 
       <Header />
       <AddContact />
+      <ContactList />
       
     </div>
   );
