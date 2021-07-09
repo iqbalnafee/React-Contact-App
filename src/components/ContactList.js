@@ -1,4 +1,5 @@
 import React from 'react'
+import ContactCard from './ContactCard';
 
 const ContactList = (props) => {
 
@@ -7,18 +8,7 @@ const ContactList = (props) => {
     const renderContacts = contacts.map(
 
         (contact) => {
-            return (
-
-                <div className="item">
-                    <div className="content">
-                        <div className="header">{contact.name}</div>
-                        <div>{contact.email}</div>
-                        
-                    </div>
-                    <i style={{float:"right"}} className="trash alternate outline icon"></i>
-                </div>
-
-            );
+            return <ContactCard contact={contact} key={contact.id} />
         }
 
     );
