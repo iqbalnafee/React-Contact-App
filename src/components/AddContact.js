@@ -9,7 +9,13 @@ export class AddContact extends Component {
 
     add = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        if(this.state.name==="" || this.state.email===""){
+            alert("All the fields are mandatory");
+            return;
+        }
+        //console.log(this.state);
+        this.props.addContacts(this.state);
+        this.setState({name:"",email:""});
     }
 
     render() {

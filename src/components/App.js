@@ -31,12 +31,16 @@ function App() {
 
   const [contacts,setContacts] = useState([]);
 
+  const addContacts = (state) => {
+    setContacts([...contacts,{id:contacts.length,name:state.name,email:state.email}]);
+  }
+
   return (
     <div className="ui container">
 
       <Header />
-      <AddContact />
-      <ContactList contacts={contacts}/>
+      <AddContact addContacts={addContacts}/>
+      <ContactList  contacts={contacts}/>
       
     </div>
   );
